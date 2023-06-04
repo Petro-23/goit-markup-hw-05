@@ -171,6 +171,10 @@ a {
   letter-spacing: 0.02em;
   /* letter-spacing: 0.02em; ІНТЕРВАЛ МІЖ СИМВОЛАМИ */
   color: #434455;
+
+  position: relative;
+  /* встановлення позиціонування елемента 
+  відносно його звичайного місця в потоці документу */
   
 }
 
@@ -255,6 +259,8 @@ border: 1px solid #E7E9FC;
   color: #ffffff;
   cursor: pointer;
   /* cursor: pointer; ТИП ВКАЗІВНИКА МИШІ НА ОБ'ЄКТІ, pointer вказівник, рука */
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-service:hover,
