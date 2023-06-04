@@ -641,7 +641,8 @@ border-radius: 0px 0px 4px 4px;
   padding: 12px 24px;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* для плавної зміни властивостей */
 }
 
 .button-all:hover,
@@ -685,7 +686,7 @@ border-radius: 0px 0px 4px 4px;
 
 .portfolio-list {
   flex-wrap: wrap;
-  /* flex-wrap: wrap; - в строке больше одного этажа */
+  /** flex-wrap: wrap; - в строке больше одного этажа */
   column-gap: 24px;
   row-gap: 48px;
   width: 1128px;
@@ -695,22 +696,26 @@ border-radius: 0px 0px 4px 4px;
 
 .portfolio-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /** для плавної появи тіні */
+
+
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
+  }
 
 .item-list {
   width: calc((100% - 48px) / 3); 
   /* flex-basis: calc((100% - 2 * 24px) / 3); */
 }
 
-.portfolio-cover-text {
+/* .portfolio-cover-text {
   position: absolute;
   top: 0;
-}
+} */
 
 
 /* .portfolio-cover-text {
@@ -730,6 +735,7 @@ border-radius: 0px 0px 4px 4px;
   border-top: none;
 }
 
+/** BACKDROP  MODAL */
 
 .backdrop {
   position: fixed;
@@ -760,7 +766,7 @@ border-radius: 0px 0px 4px 4px;
 }
 
 .data-modal-open {
-  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
