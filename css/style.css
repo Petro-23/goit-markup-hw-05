@@ -172,8 +172,8 @@ a {
   letter-spacing: 0.02em;
   /* letter-spacing: 0.02em; ІНТЕРВАЛ МІЖ СИМВОЛАМИ */
 
-  /* color: #404bbf; */
-  color: #2E2F42;
+  color: #404bbf;
+  /* color: #2E2F42; */
 
   position: relative;
   /* встановлення позиціонування елемента 
@@ -185,10 +185,11 @@ a {
 
 /* .menu-item:hover::after,  */
 /* .menu-item:focus::after */
+
 .menu-item::after {
-  width: 100%;
-  content: '';
+  content: "";
   position: absolute;
+  width: 100%;
   left: 0;
   bottom: -1px;
   height: 4px;
