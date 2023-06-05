@@ -171,7 +171,8 @@ a {
   /* line-height: 1.5; МІЖРЯДКОВИЙ ІНТЕРВАЛ */
   letter-spacing: 0.02em;
   /* letter-spacing: 0.02em; ІНТЕРВАЛ МІЖ СИМВОЛАМИ */
-  color: #434455;
+  /* color: #434455; */
+  color: #404bbf;
 
   position: relative;
   /* встановлення позиціонування елемента 
