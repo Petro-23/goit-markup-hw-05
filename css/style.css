@@ -181,7 +181,8 @@ a {
 }
 
 /* .menu-item:hover::after,  */
-.menu-item:focus::after {
+/* .menu-item:focus::after */
+.menu-item::after {
   width: 100%;
   content: '';
   position: absolute;
