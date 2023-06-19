@@ -846,11 +846,11 @@ border-radius: 0px 0px 4px 4px;
   height: 24px;
   border: 1px solid #999999;
   border-radius: 50%;
-  display: block;
   margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -858,6 +858,7 @@ border-radius: 0px 0px 4px 4px;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* анімаційний ефект для зміни значень властивостей стилю */
+
   }
 
   .modal-close:hover, 
@@ -875,5 +876,15 @@ border-radius: 0px 0px 4px 4px;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+
+}
+
+.modal-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-top: 48px;
 
 }
