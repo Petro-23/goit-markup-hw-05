@@ -6,26 +6,33 @@
 }
 
 :root {
-  --background-color: #ffffff;
+  --stroke-logo-color: #8e8f99;
+  --primary-brand-color: #4d5ae5;
+  --hover-color: #404bbf;
+  --primary-text-color: #434455;
+  --headings-text-color: #2e2f42;
+  --white-text-color: #ffffff;
+  --light-text-color: #f4f4fd;
+  --accent-color: #e7e9fc;
+
+  --green-hover-color: #31d0aa;
+  --modal-background-color: #fcfcfc;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  font-family: 'Roboto', normal;
-  padding: 1px;
-  /* width: 1440px; */
-  background-color: var(--background-color);
-margin: 0 auto;
-  /* box-sizing: border-box;
-
-  margin-left: auto;
-  margin-right: auto; */
-
+  padding-top: 72px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--white-text-color);
+  color: var(--primary-text-color);
 }
 
 
 
 
-/* Всем заголовкам и абзацам убираем отступы сверху сниху от браузера */
+/** СБРОС Всем заголовкам и абзацам убираем отступы сверху сниху от браузера */
 p,
 h1,
 h2,
@@ -84,25 +91,31 @@ a {
 /**--------------------- HEADER------------------ */
 
 /**-------------------- CONTAINER ------------------------ */
-.container {
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
-  /* outline: 2px solid red; */
-  /* box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25); */
-}
+
 
 .header {
-  box-sizing: border-box;
-  background: #FFFFFF;
-  border-bottom: 1px solid #e7e9fc;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  border-bottom: 1px solid var(--accent-color);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  background-color: var(--white-text-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .header-navigation {
@@ -111,19 +124,45 @@ a {
 
 }
 
-
+/** Logo */
 
 .header-logo {
-  position: relative;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   /* text-transform: uppercase; РЕГІСТР СИМВОЛІВ У ТЕКСТІ */
-  color: #404bbf;
-  margin-right: 76px;
+  color: var(--primary-brand-color);
+  /* margin-right: 76px; */
+}
+
+.logo-dark {
+  color: var(--headings-text-color);
+}
+
+.logo-light {
+  color: var(--light-text-color);
+}
+
+/** Navigation menu */
+
+.menu-item.active {
+  position: relative;
+  color: var(--hover-color);
+}
+
+.active::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--hover-color);
+  border-radius: 2px;
 }
 
 .header-list {
@@ -131,49 +170,14 @@ a {
   gap: 40px;
 }
 
-
-.header-list :first-child {
-  padding-top: 24px; 
-  padding-bottom: 24px;
-}
-
-.header-address {
-  font-style: normal;
-  /* font-style: normal; НАКРЕСЛЕННЯ ТЕКСТУ, НОРМ, КУРСИВ */
-}
-
-.span-logo {
-  color: #2e2f42;
-}
-/** ----------------address------------------- */
-
-.header-address-link {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-address-link:hover,
-.header-address-link:focus {
-  color: #404bbf;
-}
-
-
 .menu-item {
-  position: relative;
+  /* position: relative; */
   /* встановлення позиціонування елемента 
   відносно його звичайного місця в потоці документу */
 
   display: block;
-
   padding: 24px 0;
 
-  text-decoration: none;
-  /* text-decoration: none; ПРИБРАТИ ПІДКРЕСЛЕННЯ */
 
   font-weight: 500;
   /* font-weight: 500; ТОВЩИНА ШРИФТУ */
@@ -187,41 +191,53 @@ a {
   /* color: #404bbf; */
   color: #2E2F42;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
   /* для плавної зміни кольору текстового контенту */
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
-/* .menu-item:hover::after,  */
-/* .menu-item:focus::after */
-
-.menu-item::after {
-  position: absolute;
-  bottom: 0;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #404bbf;
-  border-radius: 2px;
-  content: "";
-  opacity: 0;
-  }
-
-  .menu-item.current::after {
-    opacity: 1;
-    animation: enphasisDropDown 250ms ease-in-out;
-  }
-
-  .menu-item.current:hover::after,
-  .menu-item.current:focus::after {
-  opacity: 1;
+.header-navigation .header-logo {
+  margin-right: 76px;
 }
 
 .menu-item:hover,
 .menu-item:focus,
-.menu-item.current {
-  color: #404bbf;;
+.contact-item:hover,
+.contact-item:focus {
+  color: var(--hover-color);
 }
+
+/* .header-list :first-child {
+  padding-top: 24px; 
+  padding-bottom: 24px;
+} */
+
+.header-address {
+  font-style: normal;
+  margin-left: auto;
+  /* font-style: normal; НАКРЕСЛЕННЯ ТЕКСТУ, НОРМ, КУРСИВ */
+}
+
+/** ----------------address------------------- */
+
+.contact-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+
+
 
 
 .portfolio-list .link {
@@ -611,9 +627,7 @@ border-radius: 0px 0px 4px 4px;
   margin-bottom: 16px;
 }
 
-.web {
-  color: #f4f4fd;
-}
+
 
 .footer-p {
   color: #f4f4fd;
