@@ -229,6 +229,7 @@ a {
 
   line-height: 1.5;
   letter-spacing: 0.02em;
+  font-weight: 500;
   color: var(--primary-text-color);
 
   transition-property: color;
